@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "client": "npm start --prefix client",
-    "start": "node server.js",
-    "server": "nodemon index --prefix server",
-    "dev": "concurrently \"npm run server\" \"npm run client  \"",
+    "start": "node client.js",
+    "server": "nodemon index --prefix client",
+    "dev": "concurrently \"npm run client\" \"npm run client  \"",
     "client-install": "npm install --prefix client",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
