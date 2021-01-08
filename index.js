@@ -7,15 +7,15 @@ const path = require("path");
 
 const PORT = process.env.PORT || 5000;
 
+// Router
+const hello = require("./router/hello");
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/test", (req, res) => {
-  console.log("test");
-  return null;
-});
+app.use("/hello", hello);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
